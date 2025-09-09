@@ -1,0 +1,14 @@
+sentence-transformers==2.2.2
+chromadb==0.4.22
+unstructured[pdf,docx,pptx]==0.12.6
+pillow==10.2.0
+python-multipart==0.0.9
+fastapi==0.110.0
+uvicorn==0.27.1
+requests==2.31.0
+python-docx==1.1.0
+pdf2image==1.16.3
+pdfminer.six==20221105
+pytesseract==0.3.10
+pypocketbase==0.8.1
+numpy==1.26.4
