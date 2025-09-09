@@ -1,0 +1,44 @@
+
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AppLayout } from "./components/layout/AppLayout";
+import Dashboard from "./pages/Dashboard";
+import KnowledgeBase from "./pages/KnowledgeBase";
+import Templates from "./pages/Templates";
+import AIAssistant from "./pages/AIAssistant";
+import Scheduling from "./pages/Scheduling";
+import Notifications from "./pages/Notifications";
+import Analytics from "./pages/Analytics";
+import Settings from "./pages/Settings";
+import NotFound from "./pages/NotFound";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AppLayout>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/knowledge" element={<KnowledgeBase />} />
+            <Route path="/templates" element={<Templates />} />
+            <Route path="/ai-assistant" element={<AIAssistant />} />
+            <Route path="/scheduling" element={<Scheduling />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AppLayout>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;
